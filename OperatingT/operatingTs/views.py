@@ -6,15 +6,12 @@ from .forms import signinForm
 from django.http import HttpResponse
 from .models import *
 
-#验证是否登录的装饰器
+'''验证是否登录的装饰器'''
 def check_user(func):
     def inner(*args, **kwargs):
-        #判断是否登录
         username = args[0].session.get("login_user", "")
         if username == "":
-            #保存当前的url到session中
             args[0].session["path"] = args[0].path
-            #重定向到登录页面
             return  redirect('/')
         return func(*args, **kwargs)
     return inner
