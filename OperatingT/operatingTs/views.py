@@ -3,7 +3,7 @@ from django.views.generic import View
 from .forms import indexForm
 from .forms import signinForm
 from django.http import HttpResponse
-
+from .models import *
 def signin(request):
     if request.method == 'POST':
         name = request.POST.get('name')
@@ -16,7 +16,7 @@ def signin(request):
         # if schoolNo and password:
         #     return HttpResponse('123')
     else:
-        return render(request,'.')
+        return render(request,'./signin/index.html')
 # def spost(request):
 #     form = signinForm(request.POST)
 #     if form.is_valid():
@@ -47,9 +47,21 @@ def login(request):
 #     def post(self,request):
 #         form = indexForm(request.POST)
 #         if form.is_valid():
-#             return HttpResponse('fuck')
+#             return HttpResponse('fuck')示例
 #         else:
 #             #print(form.errors.get_json_data())
 #             # print(form.errors)
 #             print('验证失败')
 #             return HttpResponse('123')
+
+'''论坛版块'''
+def forum(request):
+    question_list=Question.objects.all()
+    ans={}
+    for question in question_list:
+        ans[question.question_id]=Ans.objects.filter(question_id=question.question_id)[0].content
+    return render(request, './forun/index.html',{
+        'question_list':question_list,
+        'ansDict':ans,
+        'range':range(10)
+    })
