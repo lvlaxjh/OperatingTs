@@ -6,26 +6,26 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>学习辅导平台</title>
 	<link rel="stylesheet" href="{% static 'css/login/auth.css' %}">
-	<script type="text/javascript">
-		function checkform(){
-			var schoolNo=document.getElementById("schoolNo");
-			var password=document.getElementById("password");
-			var character1=document.getElementById("character1");
-			var character2=document.getElementById("character2");
-			if(schoolNo.value==""){
-				alert("账号为空,请重新输入!");
-				return false;
-			}
-			if(password.value==""){
-				alert("密码为空,请重新输入!");
-				return false;
-			}
-			if(!character1.checked&&!character2.checked){
-				alert("请选择您的身份");
-				return false;
-			}
-		}
-	</script>
+{#	<script type="text/javascript">#}
+{#		function checkform(){#}
+{#			var schoolNo=document.getElementById("schoolNo");#}
+{#			var password=document.getElementById("password");#}
+{#			var character1=document.getElementById("character1");#}
+{#			var character2=document.getElementById("character2");#}
+{#			if(schoolNo.value==""){#}
+{#				alert("账号为空,请重新输入!");#}
+{#				return false;#}
+{#			}#}
+{#			if(password.value==""){#}
+{#				alert("密码为空,请重新输入!");#}
+{#				return false;#}
+{#			}#}
+{#			if(!character1.checked&&!character2.checked){#}
+{#				alert("请选择您的身份");#}
+{#				return false;#}
+{#			}#}
+{#		}#}
+{#	</script>#}
 </head>
 
 <body>
@@ -37,6 +37,7 @@
 			<div class="lowin-box lowin-login">
 				<div class="lowin-box-inner">
 					<form onsubmit="  return checkform()" method="post">
+                        {% csrf_token %}
 						<p>学习辅导平台</p>
 						<div class="lowin-group">
 							<label>学号</label>

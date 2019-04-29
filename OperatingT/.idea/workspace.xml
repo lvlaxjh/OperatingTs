@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c37d66d-afd3-40a2-8c9e-e8da8baf955d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OperatingT/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/OperatingT/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Operatingtransceiver /login/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Operatingtransceiver /login/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Operatingtransceiver /signin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Operatingtransceiver /signin/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/operatingTs/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/operatingTs/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/operatingTs/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/operatingTs/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../signin.zip" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,7 +18,7 @@
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.45463228">
+    <splitter split-orientation="horizontal" split-proportion="0.57688636">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -34,7 +34,7 @@
             <entry file="file://$PROJECT_DIR$/OperatingT/urls.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="399">
-                  <caret line="21" column="41" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
+                  <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
                   <folding>
                     <element signature="e#634#666#0" expanded="true" />
                   </folding>
@@ -45,7 +45,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/OperatingT/settings.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="103">
+                <state relative-caret-position="67">
                   <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
                 </state>
               </provider>
@@ -54,8 +54,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Operatingtransceiver /login/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="441">
-                  <caret line="61" column="18" lean-forward="true" selection-start-line="61" selection-start-column="18" selection-end-line="61" selection-end-column="18" />
+                <state relative-caret-position="167">
+                  <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
                 </state>
               </provider>
             </entry>
@@ -63,8 +63,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Operatingtransceiver /signin/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1324">
-                  <caret line="18" column="29" lean-forward="true" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+                <state relative-caret-position="194">
+                  <caret line="33" column="15" lean-forward="true" selection-start-line="33" selection-start-column="15" selection-end-line="33" selection-end-column="15" />
                 </state>
               </provider>
             </entry>
@@ -72,8 +72,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/operatingTs/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="228">
-                  <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+                <state relative-caret-position="247">
+                  <caret line="13" column="34" lean-forward="true" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
                   <folding>
                     <element signature="e#0#35#0" expanded="true" />
                   </folding>
@@ -85,7 +85,7 @@
             <entry file="file://$PROJECT_DIR$/operatingTs/forms.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="228">
-                  <caret line="12" column="55" lean-forward="true" selection-start-line="12" selection-start-column="55" selection-end-line="12" selection-end-column="55" />
+                  <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
                 </state>
               </provider>
             </entry>
@@ -97,8 +97,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/operatingTs/forms.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="228">
-                  <caret line="12" column="8" lean-forward="true" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+                <state relative-caret-position="95">
+                  <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="12" />
                 </state>
               </provider>
             </entry>
@@ -130,10 +130,10 @@
       <list>
         <option value="$PROJECT_DIR$/Operatingtransceiver /indextest.html" />
         <option value="$PROJECT_DIR$/OperatingT/settings.py" />
-        <option value="$PROJECT_DIR$/Operatingtransceiver /signin/index.html" />
         <option value="$PROJECT_DIR$/operatingTs/forms.py" />
-        <option value="$PROJECT_DIR$/Operatingtransceiver /login/index.html" />
         <option value="$PROJECT_DIR$/OperatingT/urls.py" />
+        <option value="$PROJECT_DIR$/Operatingtransceiver /login/index.html" />
+        <option value="$PROJECT_DIR$/Operatingtransceiver /signin/index.html" />
         <option value="$PROJECT_DIR$/operatingTs/views.py" />
       </list>
     </option>
@@ -291,12 +291,12 @@
       <option name="presentableId" value="Default" />
       <updated>1556504098485</updated>
       <workItem from="1556504100253" duration="175000" />
-      <workItem from="1556506266997" duration="9166000" />
+      <workItem from="1556506266997" duration="11136000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9341000" />
+    <option name="totallyTimeSpent" value="11311000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="182" y="0" width="1258" height="900" extended-state="6" />
@@ -353,48 +353,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/operatingTs/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/OperatingT/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
+        <state relative-caret-position="67">
           <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Operatingtransceiver /login/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="61" column="18" lean-forward="true" selection-start-line="61" selection-start-column="18" selection-end-line="61" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Operatingtransceiver /signin/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1324">
-          <caret line="18" column="29" lean-forward="true" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/OperatingT/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
-          <caret line="21" column="41" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
+          <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
           <folding>
             <element signature="e#634#666#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/operatingTs/forms.py">
+    <entry file="file://$PROJECT_DIR$/Operatingtransceiver /signin/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="55" lean-forward="true" selection-start-line="12" selection-start-column="55" selection-end-line="12" selection-end-column="55" />
+        <state relative-caret-position="194">
+          <caret line="33" column="15" lean-forward="true" selection-start-line="33" selection-start-column="15" selection-end-line="33" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Operatingtransceiver /login/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/operatingTs/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        <state relative-caret-position="247">
+          <caret line="13" column="34" lean-forward="true" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>

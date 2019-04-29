@@ -10,4 +10,9 @@ class indexForm(forms.Form):
 
 #注册界面表单
 class signinForm(forms.Form):
-    pass
+    name = forms.Field()
+    schoolNo = forms.Field()
+    className = forms.Field()
+    telNo = forms.Field()
+    password = forms.Field()
+
