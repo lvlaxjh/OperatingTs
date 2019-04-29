@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1c37d66d-afd3-40a2-8c9e-e8da8baf955d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/OperatingT/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/OperatingT/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Operatingtransceiver /login/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Operatingtransceiver /login/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Operatingtransceiver /signin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Operatingtransceiver /signin/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/operatingTs/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/operatingTs/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/operatingTs/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/operatingTs/views.py" afterDir="false" />
-    </list>
+    <list default="true" id="1c37d66d-afd3-40a2-8c9e-e8da8baf955d" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,56 +150,6 @@
               <item name="OperatingT" type="b2602c69:ProjectViewProjectNode" />
               <item name="OperatingT" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="OperatingT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OperatingT" type="462c0819:PsiDirectoryNode" />
-              <item name="OperatingT" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OperatingT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OperatingT" type="462c0819:PsiDirectoryNode" />
-              <item name="Operatingtransceiver " type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OperatingT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OperatingT" type="462c0819:PsiDirectoryNode" />
-              <item name="Operatingtransceiver " type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OperatingT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OperatingT" type="462c0819:PsiDirectoryNode" />
-              <item name="Operatingtransceiver " type="462c0819:PsiDirectoryNode" />
-              <item name="signin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OperatingT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OperatingT" type="462c0819:PsiDirectoryNode" />
-              <item name="operatingTs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OperatingT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OperatingT" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OperatingT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OperatingT" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OperatingT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OperatingT" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OperatingT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OperatingT" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -291,16 +235,15 @@
       <option name="presentableId" value="Default" />
       <updated>1556504098485</updated>
       <workItem from="1556504100253" duration="175000" />
-      <workItem from="1556506266997" duration="11136000" />
+      <workItem from="1556506266997" duration="11254000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11311000" />
+    <option name="totallyTimeSpent" value="11429000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="182" y="0" width="1258" height="900" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13898027" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
