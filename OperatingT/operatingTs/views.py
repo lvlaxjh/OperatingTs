@@ -3,6 +3,9 @@ from django.views.generic import View
 from .forms import indexForm
 from django.http import HttpResponse
 
+def signin(request):
+    return render(request,'./signin/index.html')
+
 class IndexView(View):
     def get(self,request):
         return render(request,'./login/index.html')
