@@ -55,7 +55,7 @@ ROOT_URLCONF = 'OperatingT.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'Operatingtransceiver ')]
+        'DIRS': [os.path.join(BASE_DIR, 'Operatingtransceiver')]
         ,
         'APP_DIRS': True,
         'OPTIONS': {

@@ -16,7 +16,7 @@ def signin(request):
         # if schoolNo and password:
         #     return HttpResponse('123')
     else:
-        return render(request,'./signin/index.html')
+        return render(request,'.')
 # def spost(request):
 #     form = signinForm(request.POST)
 #     if form.is_valid():
