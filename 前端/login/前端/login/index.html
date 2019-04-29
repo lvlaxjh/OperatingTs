@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>学习辅导平台</title>
+	<link rel="stylesheet" href="auth.css">
+	<script type="text/javascript">
+		function checkform(){
+			var schoolNo=document.getElementById("schoolNo");
+			var password=document.getElementById("password");
+			var character1=document.getElementById("character1");
+			var character2=document.getElementById("character2");
+			if(schoolNo.value==""){
+				alert("账号为空,请重新输入!");
+				return false;
+			}
+			if(password.value==""){
+				alert("密码为空,请重新输入!");
+				return false;
+			}
+			if(!character1.checked&&!character2.checked){
+				alert("请选择您的身份");
+				return false;
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<div class="lowin">
+		<div class="lowin-brand">
+			<img src="kodinger.jpg" alt="logo">
+		</div>
+		<div class="lowin-wrapper">
+			<div class="lowin-box lowin-login">
+				<div class="lowin-box-inner">
+					<form onsubmit="return checkform()">
+						<p>学习辅导平台</p>
+						<div class="lowin-group">
+							<label>学号</label>
+							<input id="schoolNo"type="text" name="schoolNo" class="lowin-input">
+						</div>
+						<div class="lowin-group password-group">
+							<label>密码</label>
+							<input id="password" type="password" name="password" class="lowin-input">
+						</div>
+						<div class="lowin-group">
+							<label>登入身份</label>
+							<input id="character1"type="radio"  name="character" value="student" />学生
+							<input id="character2" type="radio" name="character" value="teacher" style="margin-left: 50px;"/>老师
+						</div>
+						<button class="lowin-btn login-btn" type="submit">
+							登录
+						</button>
+						<div class="text-foot" >
+							没有账户?<a href="../signin/index.html" class="register-link">注册一个</a>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="auth.js"></script>
+	<script>
+		Auth.init({
+			login_url: '#login',
+			forgot_url: '#forgot'
+		});
+	</script>
+</body>
+</html>
