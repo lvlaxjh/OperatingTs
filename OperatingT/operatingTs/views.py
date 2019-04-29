@@ -1,9 +1,24 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.urls import reverse
 from django.views.generic import View
 from .forms import indexForm
 from .forms import signinForm
 from django.http import HttpResponse
 from .models import *
+
+#验证是否登录的装饰器
+def check_user(func):
+    def inner(*args, **kwargs):
+        #判断是否登录
+        username = args[0].session.get("login_user", "")
+        if username == "":
+            #保存当前的url到session中
+            args[0].session["path"] = args[0].path
+            #重定向到登录页面
+            return  redirect('/')
+        return func(*args, **kwargs)
+    return inner
+
 def signin(request):
     if request.method == 'POST':
         name = request.POST.get('name')
@@ -33,10 +48,10 @@ def login(request):
     if request.method == 'POST':
         schoolNo = request.POST.get('schoolNo')
         password = request.POST.get('password')
-
+        request.session["login_user"] = "123"
         if schoolNo and password:
 
-            return HttpResponse('123')
+            return redirect('/forum')
     else:
         return render(request, './login/index.html')
 # class IndexView(View):
@@ -55,7 +70,9 @@ def login(request):
 #             return HttpResponse('123')
 
 '''论坛版块'''
+@check_user
 def forum(request):
+    print(request.body)
     question_list=Question.objects.all()
     ans={}
     for question in question_list:
