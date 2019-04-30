@@ -3,7 +3,7 @@ from django.urls import reverse
 from django.views.generic import View
 from .forms import indexForm
 from .forms import signinForm
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from .models import *
 
 '''验证是否登录的装饰器'''
@@ -39,8 +39,8 @@ def signin(request):
                 # property=''
                 )
         createUser.save()
-        #页面跳转
-        return HttpResponse('下一页面')
+        #页面c重定向只登陆界面
+        return redirect('/')
     else:
         return render(request,'./signin/index.html')
 
@@ -49,7 +49,7 @@ def login(request):
         schoolNo = request.POST.get('schoolNo')
         password = request.POST.get('password')
         character = request.POST.get('character')
-        #request.session["login_user"] = "123"
+        request.session["login_user"] = "123"
         #学号是否存在:
         if User.objects.filter(user_id=str(schoolNo)):
             if str(User.objects.get(user_id=str(schoolNo)).user_type) == str(character):
@@ -63,6 +63,7 @@ def login(request):
                 print('你不是'+str(character))
                 return render(request, './login/index.html')
         else:
+            return JsonResponse({'code': "0"})
             print('没这个人')
             return render(request, './login/index.html')
     else:
