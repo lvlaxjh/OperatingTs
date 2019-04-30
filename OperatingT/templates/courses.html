@@ -51,36 +51,15 @@
             </div>
            <div class="row">
                <!--open里面放点击下载连接-->
-                 <div class="col-md-3 col-sm-3 col-xs-6" >
-                    <div class="dashboard-div-wrapper bk-clr-one"style="cursor: pointer;"onclick="window.open('http://www.baidu.com')">
-                        <i  class="fa fa-edit dashboard-div-icon" ></i>
-                         <h4>课程1</h4>
+                {% for course in courses %}
+                    <div class="col-md-3 col-sm-3 col-xs-6" >
+                        <div class="dashboard-div-wrapper {{ course.color }}"style="cursor: pointer;"onclick="window.open('http://www.baidu.com')">
+                            <i  class="fa fa-edit dashboard-div-icon" ></i>
+                            <h4>{{ course.name }}</h4>
+                        </div>
                     </div>
-                </div>
-                 <div class="col-md-3 col-sm-3 col-xs-6" >
-                    <div class="dashboard-div-wrapper bk-clr-two"style="cursor: pointer;"onclick="window.open('http://www.baidu.com')">
-                        <i  class="fa fa-edit dashboard-div-icon" ></i>
-                        <h4>课程2</h4>
-                    </div>
-                </div>
-                 <div class="col-md-3 col-sm-3 col-xs-6" >
-                    <div class="dashboard-div-wrapper bk-clr-three"style="cursor: pointer;"onclick="window.open('http://www.baidu.com')">
-                        <i  class="fa fa-edit dashboard-div-icon" ></i>
-                        <h4>课程3</h4>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-3 col-xs-6" >
-                    <div class="dashboard-div-wrapper bk-clr-four"style="cursor: pointer;"onclick="window.open('http://www.baidu.com')">
-                        <i  class="fa fa-edit dashboard-div-icon" ></i>
-                        <h4>课程3</h4>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-3 col-xs-6" >
-                    <div class="dashboard-div-wrapper bk-clr-three"style="cursor: pointer;"onclick="window.open('http://www.baidu.com')">
-                        <i  class="fa fa-edit dashboard-div-icon" ></i>
-                         <h4>课程7</h4>
-                    </div>
-                </div>
+                {% endfor %}
+
            </div>
         </div>
     </div>

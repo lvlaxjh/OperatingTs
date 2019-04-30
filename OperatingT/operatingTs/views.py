@@ -72,20 +72,33 @@ def login(request):
 
 
 '''论坛版块'''
-@check_user
+#@check_user
 def forum(request):
     print(request.body)
     question_list=Question.objects.all()
     ans={}
     for question in question_list:
         ans[question.question_id]=Ans.objects.filter(question_id=question.question_id)[0].content
-    return render(request, '.forum.html',{
+    return render(request, 'forum.html',{
         'question_list':question_list,
         'ansDict':ans,
         'range':range(10)
     })
 
-@check_user
+#@check_user
 def course(request):
     lessons = Lesson.objects.all()
-    return render(request, 'courses.html', lessons)
+    courses = list()
+    result = dict()
+    color_css = ['bk-clr-one', 'bk-clr-two', 'bk-clr-three', 'bk-clr-four']
+    color_count = 0
+    for lesson in lessons:
+        one_course = {
+            'name': lesson.name,
+            'file': lesson.file,
+            'color': color_css[color_count%4]
+        }
+        color_count += 1
+        courses.append(one_course)
+    result['courses'] = courses
+    return render(request, 'courses.html', result)
