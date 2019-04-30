@@ -1,5 +1,5 @@
 from django import forms
-#forms.py现在貌似没什么用
+
 #登录界面表单
 class indexForm(forms.Form):
     # peopleID = forms.CharField()
