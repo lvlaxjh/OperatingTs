@@ -51,6 +51,8 @@ def login(request):
         character = request.POST.get('character')
         #request.session["login_user"] = "123"
         #学号是否存在:
+
+        
         if User.objects.filter(user_id=str(schoolNo)):
             if str(User.objects.get(user_id=str(schoolNo)).user_type) == str(character):
                 if str(User.objects.get(user_id=str(schoolNo)).user_pwd) == str(password):
