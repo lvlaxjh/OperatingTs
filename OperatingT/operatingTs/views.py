@@ -49,23 +49,22 @@ def login(request):
         schoolNo = request.POST.get('schoolNo')
         password = request.POST.get('password')
         character = request.POST.get('character')
-        request.session["login_user"] = "123"
+        #request.session["login_user"] = "123"
         #学号是否存在:
         if User.objects.filter(user_id=str(schoolNo)):
             if str(User.objects.get(user_id=str(schoolNo)).user_type) == str(character):
                 if str(User.objects.get(user_id=str(schoolNo)).user_pwd) == str(password):
                     print('登陆成功')
-                    return HttpResponse('下一页面')
+                    JsonResponse({'code': "0"})
                 else:
                     print('密码错误')
-                    return render(request, 'login.html')
+                    return JsonResponse({'code': "1"})
             else:
                 print('你不是'+str(character))
-                return render(request, 'login.html')
+                JsonResponse({'code': "2"})
         else:
             return JsonResponse({'code': "0"})
             print('没这个人')
-            return render(request, 'login.html')
     else:
         return render(request, 'login.html')
 
@@ -84,7 +83,7 @@ def forum(request):
         'range':range(10)
     })
 
-
+@check_user
 def course(request):
     lessons = Lesson.objects.all()
     return render(request, 'courses.html')
