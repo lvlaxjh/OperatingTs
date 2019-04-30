@@ -27,21 +27,7 @@
 {#		}#}
 {#	</script>#}
      <script type="text/javascript">
-         {#$("#form").submit(#}
-         {#    function () {#}
-         {#        $.ajax({#}
-         {#            type: "POST",#}
-         {#            dataType: "json",#}
-         {#            url: "/" ,#}
-         {#            data: $('#from').serialize(),#}
-         {#            success:function (result) {#}
-         {#                alert(result)#}
-         {#            }#}
-         {#        })#}
-         {#    }#}
-         {#)#}
         function senddata() {
-            tempwindow=window.open();
              $.ajax({type: "POST",
                  dataType: "json",
                 url: "/" ,
@@ -49,6 +35,10 @@
                      success:function (result) {
                          if(result.code=="0"){
                              alert("登录成功");
+                             $.ajax({
+                                 type: "GET",
+                                 url:"/course"
+                             })
                          }
                          else if(result.code=="1"){
                              alert("密码错误");
