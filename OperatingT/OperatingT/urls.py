@@ -21,6 +21,6 @@ urlpatterns = [
     # path('',views.IndexView.as_view()),
     path('',views.login),
     path('signin/index.html',views.signin),
-    path('forum',views.forum)
-
+    path('forum',views.forum),
+    path('course', views.course)
 ]
