@@ -87,4 +87,4 @@ def forum(request):
 
 def course(request):
     lessons = Lesson.objects.all()
-    return render(request, 'courses.html')
+    return render(request, 'courses.html', lessons)
