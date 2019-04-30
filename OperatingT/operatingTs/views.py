@@ -27,7 +27,7 @@ def signin(request):
         getschoolNO = User.objects.filter(user_id=str(schoolNo))
         if getschoolNO:
             print('已经注册过了,直接登陆')
-            return render(request, 'index.html')
+            return JsonResponse({'code': "1"})
         else:
             createUser=User(
                 user_name=str(name),
@@ -40,7 +40,7 @@ def signin(request):
                 )
         createUser.save()
         #页面c重定向只登陆界面
-        return redirect('/')
+        return JsonResponse({'code': "0"})
     else:
         return render(request,'signin.html')
 
@@ -49,14 +49,16 @@ def login(request):
         schoolNo = request.POST.get('schoolNo')
         password = request.POST.get('password')
         character = request.POST.get('character')
-        #request.session["login_user"] = "123"
+
         #学号是否存在:
 
-        
+
         if User.objects.filter(user_id=str(schoolNo)):
             if str(User.objects.get(user_id=str(schoolNo)).user_type) == str(character):
                 if str(User.objects.get(user_id=str(schoolNo)).user_pwd) == str(password):
                     print('登陆成功')
+                    # 先登录成功,再存cookie!!!!
+                    # request.session["login_user"] = "123"
                     JsonResponse({'code': "0"})
                 else:
                     print('密码错误')
@@ -79,13 +81,14 @@ def forum(request):
     ans={}
     for question in question_list:
         ans[question.question_id]=Ans.objects.filter(question_id=question.question_id)[0].content
-    return render(request, '.forum.html',{
+    return render(request, 'forum.html',{
         'question_list':question_list,
         'ansDict':ans,
-        'range':range(10)
+        'range':range(5)
     })
 
-@check_user
+
 def course(request):
     lessons = Lesson.objects.all()
+
     return render(request, 'courses.html')

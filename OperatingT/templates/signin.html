@@ -6,9 +6,6 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>学习辅导平台-注册</title>
 	<link rel="stylesheet" href="../../static/css/singnin/auth.css">
-
-
-    
 {#	<script type="text/javascript">#}
 {#		function checkform(){#}
 {#			var a=document.getElementById("namel").style.display=="none";#}
@@ -61,7 +58,30 @@
 {#			}#}
 {#		}#}
 {#	</script>#}
-
+    <script type="application/javascript">
+        function senddata() {
+            var op=window.open("","_self");
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                url: "/register" ,
+                data:$("#form").serialize(),
+                success:function (result) {
+                    if(result.code=="0"){
+                        alert("注册成功,请登录");
+                        op.location.href="/";
+                    }
+                    else if(result.code=="1"){
+                        alert("该学号已被注册");
+                        op.location.href="/register";
+                    }
+                },
+                error:function () {
+                    
+                }
+            })
+        }
+    </script>
 </head>
 
 <body>
@@ -72,7 +92,7 @@
 		<div class="lowin-wrapper">
 			<div class="lowin-box lowin-register lowin-flip lowin-animated-flip" style="display: block;">
 				<div class="lowin-box-inner">
-					<form onsubmit="return checkform()" method="post">
+					<form id="form" onsubmit="return senddata()" method="post">
 						<p>创建你的账户</p>
 						<div class="lowin-group">
 							<label>姓名</label>
@@ -108,7 +128,6 @@
 							注册
 						</button>
 						<div class="text-foot">
-{#							已有账户? <a href="../login/index.html" class="login-link">直接登录</a>#}
 						    已有账户? <a href="../" class="login-link">直接登录</a>
                         </div>
 					</form>
@@ -118,6 +137,7 @@
 	</div>
 
 	<script src="../../static/js/signin/auth.js"></script>
+    <script src="../static/js/jquery-1.11.1.js"></script>
 	<script>
 		Auth.init({
 			login_url: '#login',

@@ -20,7 +20,7 @@ urlpatterns = [
     # path('admin/', admin.site.urls),
     # path('',views.IndexView.as_view()),
     path('',views.login),
-    path('register.html',views.signin),
+    path('register',views.signin),
     path('forum',views.forum),
     path('course', views.course)
 ]
