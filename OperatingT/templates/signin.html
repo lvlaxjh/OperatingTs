@@ -1,13 +1,128 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>学习辅导平台-注册</title>
+	<link rel="stylesheet" href="../../static/css/singnin/auth.css">
+
+
+    
+{#	<script type="text/javascript">#}
+{#		function checkform(){#}
+{#			var a=document.getElementById("namel").style.display=="none";#}
+{#			var b=document.getElementById("schoolNol").style.display=="none";#}
+{#			var c=document.getElementById("telNol").style.display=="none";#}
+{#			var d=document.getElementById("classNamel").style.display=="none";#}
+{#			var e=document.getElementById("passwordl").style.display=="none";#}
+{#			var f=document.getElementById("repasswordl").style.display=="none";#}
+{#			if (!(a&&b&&c&&d&&e&&f)){#}
+{#			    alert("请检查您表单!")#}
+{#				return false;#}
+{#			}#}
+{#		}#}
+{#		function checkcontent(submit){#}
+{#			if(submit.id=="name"){#}
+{#			    if(submit.value=="")#}
+{#			        document.getElementById("namel").style.display="";#}
+{#			    else#}
+{#			        document.getElementById("namel").style.display="none";#}
+{#			}#}
+{#			if(submit.id=="schoolNo"){#}
+{#			    if(submit.value=="")#}
+{#			        document.getElementById("schoolNol").style.display="";#}
+{#			    else#}
+{#			        document.getElementById("schoolNol").style.display="none";#}
+{#			}#}
+{#			if(submit.id=="telNo"){#}
+{#			    if(submit.value=="")#}
+{#			        document.getElementById("telNol").style.display="";#}
+{#			    else#}
+{#			        document.getElementById("telNol").style.display="none";#}
+{#			}#}
+{#			if(submit.id=="className"){#}
+{#			    if(submit.value=="")#}
+{#			        document.getElementById("classNamel").style.display="";#}
+{#			    else#}
+{#			        document.getElementById("classNamel").style.display="none";#}
+{#			}#}
+{#			if(submit.id=="password"){#}
+{#			    if(submit.value=="")#}
+{#			        document.getElementById("passwordl").style.display="";#}
+{#			    else#}
+{#			        document.getElementById("passwordl").style.display="none";#}
+{#			}#}
+{#			if(submit.id=="repassword"){#}
+{#			    if(submit.value!=document.getElementById("password").value)#}
+{#			        document.getElementById("repasswordl").style.display="";#}
+{#			    else#}
+{#			        document.getElementById("repasswordl").style.display="none";#}
+{#			}#}
+{#		}#}
+{#	</script>#}
+
 </head>
+
 <body>
-<form action="" method="post">
-    <input type="text" name="charf">
-    <input type="submit" value="提交">
-</form>
+	<div class="lowin">
+		<div class="lowin-brand">
+			<img src="../../static/images/singnin/kodinger.jpg" alt="logo">
+		</div>
+		<div class="lowin-wrapper">
+			<div class="lowin-box lowin-register lowin-flip lowin-animated-flip" style="display: block;">
+				<div class="lowin-box-inner">
+					<form onsubmit="return checkform()" method="post">
+						<p>创建你的账户</p>
+						<div class="lowin-group">
+							<label>姓名</label>
+							<label id="namel"style="display: none;color: red">请输入姓名</label>
+							<input id="name"type="text" name="name" class="lowin-input" onblur="checkcontent(this)">
+						</div>
+						<div class="lowin-group">
+							<label>学号</label>
+							<label id="schoolNol"style="display: none;color: red">请输入学号</label>
+							<input id="schoolNo"type="number"name="schoolNo" class="lowin-input"onblur="checkcontent(this)">
+						</div>
+						<div class="lowin-group">
+							<label>班级</label>
+							<label id="classNamel"style="display: none;color: red">请输入班级</label>
+							<input id="className"type="text" name="className" class="lowin-input"onblur="checkcontent(this)">
+						</div>
+						<div class="lowin-group">
+							<label>手机号</label>
+							<label id="telNol"style="display: none;color: red">请输入手机号</label>
+							<input id="telNo" type="text"name="telNo" class="lowin-input"onblur="checkcontent(this)">
+						</div>
+						<div class="lowin-group">
+							<label>密码</label>
+							<label id="passwordl"style="display: none;color: red">请输入密码</label>
+							<input id="password"type="password" name="password" class="lowin-input"onblur="checkcontent(this)">
+						</div>
+						<div class="lowin-group">
+							<label>确认密码</label>
+							<label id="repasswordl"style="display: none;color: red">密码输入不一致</label>
+							<input id="repassword"type="password" class="lowin-input"onblur="checkcontent(this)">
+						</div>
+						<button class="lowin-btn" type="submit">
+							注册
+						</button>
+						<div class="text-foot">
+{#							已有账户? <a href="../login/index.html" class="login-link">直接登录</a>#}
+						    已有账户? <a href="../" class="login-link">直接登录</a>
+                        </div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="../../static/js/signin/auth.js"></script>
+	<script>
+		Auth.init({
+			login_url: '#login',
+			forgot_url: '#forgot'
+		});
+	</script>
 </body>
 </html>
