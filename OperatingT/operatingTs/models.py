@@ -17,8 +17,6 @@ class Lesson(models.Model):
     name = models.CharField("课程名", max_length = 255, null = False, default = "Lesson")
     file = models.TextField("文件名", null = False)
 
-
-
     def __str__(self):
         return str(self.lesson_id)
 
