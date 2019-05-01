@@ -139,10 +139,8 @@ def download(request):
             UAL = User_and_Lesson.objects.filter(lesson_id = lesson_id, user_id = user_id)
             if len(UAL) == 0:
                 UAL = User_and_Lesson.objects.create(lesson_id = lesson_id, user_id = user_id)
-        with open('file/' + file, 'rb') as f:
-            c = f.read()
-        response = FileResponse(c)
-        response =FileResponse(file)  
+
+        response = FileResponse(open('file/' + file, 'rb'))
         response['Content-Type']='application/octet-stream'  
         response['Content-Disposition']='attachment;filename="' + file + '"'  
         return response
@@ -156,7 +154,7 @@ def loadedcourse(request):
     color_css = ['bk-clr-one', 'bk-clr-two', 'bk-clr-three', 'bk-clr-four']
     color_count = 0
     for course_id in course_ids:
-        courses.append(Lesson.objects.get(lesson_id=course_id))
+        courses.append(Lesson.objects.get(lesson_id=int(course_id.lesson_id)))
     for course in courses:
         one_course = {
             'name': course.name,
