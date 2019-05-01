@@ -72,7 +72,7 @@ def login(request):
                     return JsonResponse({'code': "1"})
             else:
                 print('你不是'+str(character))
-                JsonResponse({'code': "2"})
+                return JsonResponse({'code': "2"})
         else:
             print('没这个人')
             return JsonResponse({'code': "3"})
