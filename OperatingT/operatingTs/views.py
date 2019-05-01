@@ -6,6 +6,9 @@ from .forms import signinForm
 from django.http import HttpResponse, JsonResponse
 from .models import *
 
+Get_UserId = ''
+
+
 '''验证是否登录的装饰器'''
 def check_user(func):
     def inner(*args, **kwargs):
@@ -59,6 +62,7 @@ def login(request):
             if str(User.objects.get(user_id=str(schoolNo)).user_type) == str(character):
                 if str(User.objects.get(user_id=str(schoolNo)).user_pwd) == str(password):
                     print('登陆成功')
+                    Get_UserId = schoolNo
                     # 先登录成功,再存cookie!!!!
                     # 调试时可以先注释掉
                     request.session["login_user"] = schoolNo
@@ -74,6 +78,19 @@ def login(request):
             return JsonResponse({'code': "3"})
     else:
         return render(request, 'login.html')
+
+'''学习中心'''
+def learningcenter(request):
+    #检测该用户是否下载过课程:
+    if User.objects.get(user_id=str(Get_UserId)).properties:
+        print('没下载过课程')
+    else:
+        #查询用户所有下载过的课程
+        for getOnelessonId in User_and_Lesson.objects.get(user_id=int(Get_UserId)).lesson_id:
+            if Lesson.objects.get(lesson_id=getOnelessonId):
+                lessonName = Lesson.objects.get(lesson_id=getOnelessonId).name
+                lessonFile = Lesson.objects.get(lesson_id=getOnelessonId).file
+    return render(request,'learningcenter.html')
 
 
 '''论坛版块'''
