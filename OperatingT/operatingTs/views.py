@@ -17,6 +17,7 @@ def check_user(func):
         return func(*args, **kwargs)
     return inner
 
+#注册界面
 def signin(request):
     if request.method == 'POST':
         name = request.POST.get('name')
@@ -44,6 +45,7 @@ def signin(request):
     else:
         return render(request,'signin.html')
 
+#登录界面
 def login(request):
     # fuck!!!!不要动这行!!!!!
     if request.method == 'GET' and request.GET.get('csrfmiddlewaretoken'):
@@ -58,7 +60,8 @@ def login(request):
                 if str(User.objects.get(user_id=str(schoolNo)).user_pwd) == str(password):
                     print('登陆成功')
                     # 先登录成功,再存cookie!!!!
-                    request.session["login_user"] = "123"
+                    # 调试时可以先注释掉
+                    request.session["login_user"] = schoolNo
                     return JsonResponse({'code': "0"})
                 else:
                     print('密码错误')
@@ -87,6 +90,8 @@ def forum(request):
         'range':range(5)
     })
 
+'''调试时注释掉cookie检查'''
+'''首页'''
 @check_user
 def course(request):
     lessons = Lesson.objects.all()
@@ -104,3 +109,23 @@ def course(request):
         courses.append(one_course)
     result['courses'] = courses
     return render(request, 'courses.html', result)
+
+#已下载课程
+#@check_user
+def loadedcourse(request):
+    course_ids=User_and_Lesson.objects.filter(user_id=request.session.get("login_user", ""))
+    courses=[]
+    result=[]
+    color_css = ['bk-clr-one', 'bk-clr-two', 'bk-clr-three', 'bk-clr-four']
+    color_count = 0
+    for course_id in course_ids:
+        courses.append(Lesson.objects.get(lesson_id=course_id))
+    for course in courses:
+        one_course = {
+            'name': course.name,
+            'file': course.file,
+            'color': color_css[color_count % 4]
+        }
+        color_count += 1
+        result.append(one_course)
+    return render(request, 'loadedcourse.html', {'courses':result})

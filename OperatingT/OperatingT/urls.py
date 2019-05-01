@@ -23,5 +23,6 @@ urlpatterns = [
     path('register',views.signin),
     path('forum',views.forum),
     path('course', views.course),
-    path('admin/', admin.site.urls)
+    path('admin/', admin.site.urls),
+    path('loaded',views.loadedcourse)
 ]

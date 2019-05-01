@@ -20,6 +20,10 @@ class Lesson(models.Model):
     def __str__(self):
         return str(self.lesson_id)
 
+class User_and_Lesson(models.Model):
+    lesson_id=models.IntegerField("lesson_id")
+    user_id=models.IntegerField("user_id")
+
 class Question(models.Model):
     question_id=models.AutoField("question_id",primary_key=True)
     content=models.TextField('content')
