@@ -77,7 +77,7 @@ def login(request):
 
 
 '''论坛版块'''
-#@check_user
+@check_user
 def forum(request):
     print(request.body)
     question_list=Question.objects.all()
@@ -111,7 +111,7 @@ def course(request):
     return render(request, 'courses.html', result)
 
 #已下载课程
-#@check_user
+@check_user
 def loadedcourse(request):
     course_ids=User_and_Lesson.objects.filter(user_id=request.session.get("login_user", ""))
     courses=[]
