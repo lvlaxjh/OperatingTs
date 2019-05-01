@@ -6,28 +6,8 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>学习辅导平台</title>
 	<link rel="stylesheet" href="{% static 'css/login/auth.css' %}">
-{#	<script type="text/javascript">#}
-{#		function checkform(){#}
-{#			var schoolNo=document.getElementById("schoolNo");#}
-{#			var password=document.getElementById("password");#}
-{#			var character1=document.getElementById("character1");#}
-{#			var character2=document.getElementById("character2");#}
-{#			if(schoolNo.value==""){#}
-{#				alert("账号为空,请重新输入!");#}
-{#				return false;#}
-{#			}#}
-{#			if(password.value==""){#}
-{#				alert("密码为空,请重新输入!");#}
-{#				return false;#}
-{#			}#}
-{#			if(!character1.checked&&!character2.checked){#}
-{#				alert("请选择您的身份");#}
-{#				return false;#}
-{#			}#}
-{#		}#}
-{#	</script>#}
-     <script type="text/javascript">
-        function senddata() {
+	<script type="text/javascript">
+         function senddata() {
             var target = function () { window.open("/course", '_black'); };
             var _self = function () { window.open("/", '_black'); };
             var ssoAction = window.open("", "_self");
@@ -58,6 +38,28 @@
                  }
              );
         }
+		function checkform(){
+			var schoolNo=document.getElementById("schoolNo");
+			var password=document.getElementById("password");
+			var character1=document.getElementById("character1");
+			var character2=document.getElementById("character2");
+			if(schoolNo.value==""){
+				alert("账号为空,请重新输入!");
+				return false;
+			}
+			if(password.value==""){
+				alert("密码为空,请重新输入!");
+				return false;
+			}
+			if(!character1.checked&&!character2.checked){
+				alert("请选择您的身份");
+				return false;
+			}
+			senddata();
+		}
+	</script>
+     <script type="text/javascript">
+
     </script>
 </head>
 
@@ -69,7 +71,7 @@
 		<div class="lowin-wrapper">
 			<div class="lowin-box lowin-login">
 				<div class="lowin-box-inner">
-					<form id="form" onsubmit="senddata()">
+					<form id="form" onsubmit="return checkform()">
                         {% csrf_token %}
 						<p>学习辅导平台</p>
 						<div class="lowin-group">
