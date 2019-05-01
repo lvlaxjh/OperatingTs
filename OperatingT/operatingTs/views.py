@@ -3,7 +3,7 @@ from django.urls import reverse
 from django.views.generic import View
 from .forms import indexForm
 from .forms import signinForm
-from django.http import HttpResponse, JsonResponse
+from django.http import HttpResponse, JsonResponse, FileResponse
 from .models import *
 
 Get_UserId = ''
@@ -114,18 +114,38 @@ def course(request):
     lessons = Lesson.objects.all()
     courses = list()
     result = dict()
+    user_id = request.session.get("login_user", "")
     color_css = ['bk-clr-one', 'bk-clr-two', 'bk-clr-three', 'bk-clr-four']
     color_count = 0
     for lesson in lessons:
         one_course = {
             'name': lesson.name,
-            'file': lesson.file,
+            'lesson_id': lesson.lesson_id,
+            'user_id': user_id,
             'color': color_css[color_count%4]
         }
         color_count += 1
         courses.append(one_course)
     result['courses'] = courses
     return render(request, 'courses.html', result)
+
+def download(request):
+    lesson_id = request.GET.get('lesson_id')
+    user_id = request.GET.get('user_id')
+    if len(lesson_id) > 0:
+        lesson = Lesson.objects.filter(lesson_id = lesson_id)
+        file = lesson[0].file
+        if len(user_id) > 0:
+            UAL = User_and_Lesson.objects.filter(lesson_id = lesson_id, user_id = user_id)
+            if len(UAL) == 0:
+                UAL = User_and_Lesson.objects.create(lesson_id = lesson_id, user_id = user_id)
+        with open('file/' + file, 'rb') as f:
+            c = f.read()
+        response = FileResponse(c)
+        response =FileResponse(file)  
+        response['Content-Type']='application/octet-stream'  
+        response['Content-Disposition']='attachment;filename="' + file + '"'  
+        return response
 
 #已下载课程
 #@check_user

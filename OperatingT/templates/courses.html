@@ -53,7 +53,7 @@
                <!--open里面放点击下载连接-->
                 {% for course in courses %}
                     <div class="col-md-3 col-sm-3 col-xs-6" >
-                        <div class="dashboard-div-wrapper {{ course.color }}"style="cursor: pointer;"onclick="window.open('http://www.baidu.com')">
+                        <div class="dashboard-div-wrapper {{ course.color }}"style="cursor: pointer;"onclick="window.open('donwload?lesson_id={{ course.lesson_id }}&user_id={{ course.user_id }}')">
                             <i  class="fa fa-edit dashboard-div-icon" ></i>
                             <h4>{{ course.name }}</h4>
                         </div>

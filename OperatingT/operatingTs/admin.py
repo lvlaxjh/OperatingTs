@@ -13,7 +13,11 @@ class QuestionAdmin(admin.ModelAdmin):
 class AnsAdmin(admin.ModelAdmin):
     list_display = ('ans_id', 'content', 'question_id')
 
+class ADUAdmin(admin.ModelAdmin):
+    list_display = ('user_id', 'lesson_id')
+
 admin.site.register(User, UserAdmin)
 admin.site.register(Lesson, LessonAdmin)
 admin.site.register(Question, QuestionAdmin)
 admin.site.register(Ans, AnsAdmin)
+admin.site.register(User_and_Lesson, ADUAdmin)
