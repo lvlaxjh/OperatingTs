@@ -6,59 +6,7 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>学习辅导平台-注册</title>
 	<link rel="stylesheet" href="../../static/css/singnin/auth.css">
-{#	<script type="text/javascript">#}
-{#		function checkform(){#}
-{#			var a=document.getElementById("namel").style.display=="none";#}
-{#			var b=document.getElementById("schoolNol").style.display=="none";#}
-{#			var c=document.getElementById("telNol").style.display=="none";#}
-{#			var d=document.getElementById("classNamel").style.display=="none";#}
-{#			var e=document.getElementById("passwordl").style.display=="none";#}
-{#			var f=document.getElementById("repasswordl").style.display=="none";#}
-{#			if (!(a&&b&&c&&d&&e&&f)){#}
-{#			    alert("请检查您表单!")#}
-{#				return false;#}
-{#			}#}
-{#		}#}
-{#		function checkcontent(submit){#}
-{#			if(submit.id=="name"){#}
-{#			    if(submit.value=="")#}
-{#			        document.getElementById("namel").style.display="";#}
-{#			    else#}
-{#			        document.getElementById("namel").style.display="none";#}
-{#			}#}
-{#			if(submit.id=="schoolNo"){#}
-{#			    if(submit.value=="")#}
-{#			        document.getElementById("schoolNol").style.display="";#}
-{#			    else#}
-{#			        document.getElementById("schoolNol").style.display="none";#}
-{#			}#}
-{#			if(submit.id=="telNo"){#}
-{#			    if(submit.value=="")#}
-{#			        document.getElementById("telNol").style.display="";#}
-{#			    else#}
-{#			        document.getElementById("telNol").style.display="none";#}
-{#			}#}
-{#			if(submit.id=="className"){#}
-{#			    if(submit.value=="")#}
-{#			        document.getElementById("classNamel").style.display="";#}
-{#			    else#}
-{#			        document.getElementById("classNamel").style.display="none";#}
-{#			}#}
-{#			if(submit.id=="password"){#}
-{#			    if(submit.value=="")#}
-{#			        document.getElementById("passwordl").style.display="";#}
-{#			    else#}
-{#			        document.getElementById("passwordl").style.display="none";#}
-{#			}#}
-{#			if(submit.id=="repassword"){#}
-{#			    if(submit.value!=document.getElementById("password").value)#}
-{#			        document.getElementById("repasswordl").style.display="";#}
-{#			    else#}
-{#			        document.getElementById("repasswordl").style.display="none";#}
-{#			}#}
-{#		}#}
-{#	</script>#}
-    <script type="application/javascript">
+	<script type="text/javascript">
         function senddata() {
             var op=window.open("","_self");
             $.ajax({
@@ -77,10 +25,66 @@
                     }
                 },
                 error:function () {
-                    
+
                 }
             })
         }
+		function checkform(){
+			var a=document.getElementById("namel").style.display=="none";
+			var b=document.getElementById("schoolNol").style.display=="none";
+			var c=document.getElementById("telNol").style.display=="none";
+			var d=document.getElementById("classNamel").style.display=="none";
+			var e=document.getElementById("passwordl").style.display=="none";
+			var f=document.getElementById("repasswordl").style.display=="none";
+			if (!(a&&b&&c&&d&&e&&f)){
+			    alert("请检查您表单!")
+				return false;
+			}
+			else {
+			    senddata();
+            }
+		}
+		function checkcontent(submit){
+			if(submit.id=="name"){
+			    if(submit.value=="")
+			        document.getElementById("namel").style.display="";
+			    else
+			        document.getElementById("namel").style.display="none";
+			}
+			if(submit.id=="schoolNo"){
+			    if(submit.value=="")
+			        document.getElementById("schoolNol").style.display="";
+			    else
+			        document.getElementById("schoolNol").style.display="none";
+			}
+			if(submit.id=="telNo"){
+			    if(submit.value=="")
+			        document.getElementById("telNol").style.display="";
+			    else
+			        document.getElementById("telNol").style.display="none";
+			}
+			if(submit.id=="className"){
+			    if(submit.value=="")
+			        document.getElementById("classNamel").style.display="";
+			    else
+			        document.getElementById("classNamel").style.display="none";
+			}
+			if(submit.id=="password"){
+			    if(submit.value=="")
+			        document.getElementById("passwordl").style.display="";
+			    else
+			        document.getElementById("passwordl").style.display="none";
+			}
+			if(submit.id=="repassword"){
+			    if(submit.value!=document.getElementById("password").value)
+			        document.getElementById("repasswordl").style.display="";
+			    else
+			        document.getElementById("repasswordl").style.display="none";
+			}
+		}
+	</script>
+    <script type="application/javascript">
+
     </script>
 </head>
 
@@ -92,7 +96,7 @@
 		<div class="lowin-wrapper">
 			<div class="lowin-box lowin-register lowin-flip lowin-animated-flip" style="display: block;">
 				<div class="lowin-box-inner">
-					<form id="form" onsubmit="return senddata()" method="post">
+					<form id="form" onsubmit="return checkform()" method="post">
 						<p>创建你的账户</p>
 						<div class="lowin-group">
 							<label>姓名</label>
