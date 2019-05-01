@@ -139,10 +139,8 @@ def download(request):
             UAL = User_and_Lesson.objects.filter(lesson_id = lesson_id, user_id = user_id)
             if len(UAL) == 0:
                 UAL = User_and_Lesson.objects.create(lesson_id = lesson_id, user_id = user_id)
-        with open('file/' + file, 'rb') as f:
-            c = f.read()
-        response = FileResponse(c)
-        response =FileResponse(file)  
+
+        response = FileResponse(open('file/' + file, 'rb'))
         response['Content-Type']='application/octet-stream'  
         response['Content-Disposition']='attachment;filename="' + file + '"'  
         return response
