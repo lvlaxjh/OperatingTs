@@ -26,5 +26,6 @@ urlpatterns = [
     path('course', views.course),
     path('admin/', admin.site.urls),
     path('loaded',views.loadedcourse),
-    path('donwload', views.download)
+    path('donwload', views.download),
+    path('init', views.initial)
 ]

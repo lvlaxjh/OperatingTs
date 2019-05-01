@@ -99,8 +99,10 @@ def forum(request):
     print(request.body)
     question_list=Question.objects.all()
     ans={}
+    count = 0
     for question in question_list:
-        ans[question.question_id]=Ans.objects.filter(question_id=question.question_id)[0].content
+        ans[question.question_id]=Ans.objects.filter(question_id=count%2+1)[0].content
+        count += 1
     return render(request, 'forum.html',{
         'question_list':question_list,
         'ansDict':ans,
@@ -164,3 +166,101 @@ def loadedcourse(request):
         color_count += 1
         result.append(one_course)
     return render(request, 'loadedcourse.html', {'courses':result})
+
+def initial(request):
+    users = [
+        {
+            'user_id': '2019001',
+            'user_pwd': '2019001',
+            'user_name': '张三',
+            'user_class': '911',
+            'user_phone': '133333',
+            'user_type': 'student',
+            'properties': '[]'
+        },
+        {
+            'user_id': '2019002',
+            'user_pwd': '2019002',
+            'user_name': '李四',
+            'user_class': '911',
+            'user_phone': '133334',
+            'user_type': 'student',
+            'properties': '[]'
+        },        
+        {
+            'user_id': '2019003',
+            'user_pwd': '2019003',
+            'user_name': '王五',
+            'user_class': '911',
+            'user_phone': '133335',
+            'user_type': 'student',
+            'properties': '[]'
+        }
+    ]
+    lessons = [
+        {
+            'name': '离散数学',
+            'file': '离散数学.pdf'
+        },
+        {
+            'name': '中国近代史',
+            'file': '中国近代史.pdf'
+        },
+        {
+            'name': '计算机组成与结构',
+            'file': '计算机组成与结构.pdf'
+        },
+        {
+            'name': 'TensorFlow',
+            'file': 'TensorFlow.pdf'
+        },
+    ]
+    questions = [
+        {
+            'content': '天王盖地虎'
+        },
+        {
+            'content': '猪鼻子插葱'
+        }
+    ]
+    answers = [
+        {
+            'content': '宝塔镇河妖',
+            'question_id': 1
+        },
+        {
+            'content': '装象',
+            'question_id': 2
+        }
+    ]
+
+    for user in users:
+        if len(User.objects.filter(user_id = user['user_id'])) == 0:
+            User.objects.create(
+                user_id = user['user_id'], 
+                user_pwd = user['user_pwd'], 
+                user_name = user['user_name'],
+                user_class = user['user_class'],
+                user_phone = user['user_phone'],
+                user_type = user['user_type'],
+                properties = user['properties']
+                )
+
+    for lesson in lessons:
+        Lesson.objects.create(
+            name = lesson['name'],
+            file = lesson['file']
+        )
+
+    for question in questions:
+        Question.objects.create(
+            content = question['content']
+        )
+
+    for answer in answers:
+        Ans.objects.create(
+            content = answer['content'],
+            question_id = answer['question_id']
+        )
+
+    return HttpResponse('Successful!!')
