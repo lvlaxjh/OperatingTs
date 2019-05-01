@@ -10,6 +10,7 @@ from .models import *
 def check_user(func):
     def inner(*args, **kwargs):
         username = args[0].session.get("login_user", "")
+        print(username)
         if username == "":
             args[0].session["path"] = args[0].path
             return  redirect('/')
@@ -38,28 +39,27 @@ def signin(request):
                 user_type='student',
                 # property=''
                 )
-        createUser.save()
-        #页面c重定向只登陆界面
-        return JsonResponse({'code': "0"})
+            createUser.save()
+            return JsonResponse({'code': "0"})
     else:
         return render(request,'signin.html')
 
 def login(request):
+    # fuck!!!!不要动这行!!!!!
+    if request.method == 'GET' and request.GET.get('csrfmiddlewaretoken'):
+        return redirect('/')
     if request.method == 'POST':
         schoolNo = request.POST.get('schoolNo')
         password = request.POST.get('password')
         character = request.POST.get('character')
-
         #学号是否存在:
-
-
         if User.objects.filter(user_id=str(schoolNo)):
             if str(User.objects.get(user_id=str(schoolNo)).user_type) == str(character):
                 if str(User.objects.get(user_id=str(schoolNo)).user_pwd) == str(password):
                     print('登陆成功')
                     # 先登录成功,再存cookie!!!!
-                    # request.session["login_user"] = "123"
-                    JsonResponse({'code': "0"})
+                    request.session["login_user"] = "123"
+                    return JsonResponse({'code': "0"})
                 else:
                     print('密码错误')
                     return JsonResponse({'code': "1"})
@@ -67,8 +67,8 @@ def login(request):
                 print('你不是'+str(character))
                 JsonResponse({'code': "2"})
         else:
-            return JsonResponse({'code': "0"})
             print('没这个人')
+            return JsonResponse({'code': "3"})
     else:
         return render(request, 'login.html')
 
@@ -87,7 +87,7 @@ def forum(request):
         'range':range(5)
     })
 
-#@check_user
+@check_user
 def course(request):
     lessons = Lesson.objects.all()
     courses = list()

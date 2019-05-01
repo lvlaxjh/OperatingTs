@@ -28,15 +28,20 @@
 {#	</script>#}
      <script type="text/javascript">
         function senddata() {
+            var target = function () { window.open("/course", '_black'); };
+            var _self = function () { window.open("/", '_black'); };
             var ssoAction = window.open("", "_self");
+            $.ajaxSetup({data: {csrfmiddlewaretoken: "{{ csrf_token }}" }});
              $.ajax({type: "POST",
                  dataType: "json",
+                 async : false,
                 url: "/" ,
-                     data: $('#from').serialize(),
+                     data: $('#form').serialize(),
                      success:function (result) {
                          if(result.code=="0"){
                              alert("登录成功");
-                             ssoAction.location.href="/course";
+                             target();
+                             ssoAction.close();
                          }
                          else if(result.code=="1"){
                              alert("密码错误");
